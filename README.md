@@ -1,0 +1,127 @@
+<div align="center">
+
+# Multi-Modal Edge-AI Framework for Real-Time Industrial Water Quality Monitoring and Automated EPA Compliance
+
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
+[![LangChain](https://img.shields.io/badge/LangChain-Agentic%20AI-orange)](https://www.langchain.com/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-LSTM-red)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+*An advanced, edge-deployable artificial intelligence architecture integrating predictive ML, IoT sensor fusion, and Agentic Large Language Models (LLMs) to automate federal environmental compliance.*
+
+</div>
+
+## 📖 Overview
+
+Industrial effluent management currently relies on reactive, manual, and laboratory-delayed sampling, frequently resulting in undetected EPA violations and environmental damage. This repository implements a **Multi-Modal Edge-AI Framework** that shifts environmental oversight from passive observation to proactive intelligence. 
+
+By bridging high-frequency IoT sensor telemetry with a stacked machine learning architecture and an Agentic AI reasoning layer, this framework autonomously forecasts sensor drift, detects regulatory breaches, isolates heavy metal speciation, and generates human-readable, legally grounded NetDMR compliance reports.
+
+**SEO Keywords**: *Real-time water quality monitoring, Edge AI IoT, EPA compliance automation, LangChain Agentic AI, LSTM time-series forecasting, environmental engineering, wastewater management, heavy metal speciation, machine learning in sustainability.*
+
+---
+
+## 🧠 System Architecture
+
+The project relies on a deeply integrated 3+1 Layer architecture designed for Edge deployment (e.g., NVIDIA Jetson Nano):
+
+### 1. Layer 1: Predictive Forecasting (PyTorch LSTM)
+- **Mechanism**: A 2-layer stacked Long Short-Term Memory (LSTM) network (128 units).
+- **Function**: Processes rolling windows of Z-score normalized sequential data to forecast critical parameters (pH, DO, TDS) 30 to 90 minutes into the future. 
+- **Value**: Enables proactive intervention before a statutory limit is breached.
+
+### 2. Layer 2: Regulatory Classification (Random Forest)
+- **Mechanism**: Tree-based ensemble learning utilizing engineered derivatives (DO/TDS ratios, rolling standard deviations, rate of change).
+- **Function**: Classifies the current multi-dimensional sensor vector as `COMPLIANT` or `NON-COMPLIANT (VIOLATION)` based on US EPA guidelines.
+- **Performance**: High F1-score with prioritized recall to ensure zero false negatives for toxic outfalls.
+
+### 3. Layer 3: Chemical Speciation (KMeans + Rule-Based Redox)
+- **Mechanism**: Unsupervised KMeans clustering (k=4) fused with deterministic geochemical transition rules.
+- **Function**: Infers the biochemical state of heavy metals (e.g., Arsenate As(V) vs. Arsenite As(III)) based on pH and Oxidation-Reduction Potential (ORP).
+- **Value**: Different chemical species are functionally different toxins and require vastly different physical remediation therapies.
+
+### 4. Agentic AI Compliance Layer (LangChain)
+- **Mechanism**: An LLM-driven deterministic agent utilizing LCEL (LangChain Expression Language).
+- **Function**: Synthesizes outputs from Layers 1, 2, and 3, applies statutory mapping (40 CFR §141.62), and autonomously drafts NetDMR-ready reporting alongside step-by-step remediation instructions for ground operators.
+
+---
+
+## 📊 Industry-Standard Data Simulation
+
+To evaluate the framework under realistic conditions, this repository includes a highly specialized synthetic data generator that mimics actual industrial IoT outfall probes.
+
+- **Sampling Frequency**: 0.1 Hz (10-second intervals) representing continuous streaming.
+- **Signal Drift**: Data features authentic autocorrelation (using sinusoidal/cosine functions) simulating gradual sensor drift and industrial flow variations.
+- **Realistic Noise**: Injection of Gaussian noise mimics the hardware imperfections of submerged probes.
+- **Imbalanced Constraints**: Mimicking real-world scenarios, the dataset simulates an ~80% to 90% compliance baseline, with a late-stage gradual temporal drift into an active violation state (e.g., Arsenic creeping above `0.01 mg/L`).
+- **Target Parameters**:
+  - **pH**: Safe range 6.5 - 8.5
+  - **Total Dissolved Solids (TDS)**: Limit 500 mg/L
+  - **Dissolved Oxygen (DO)**: Minimum 6.0 mg/L
+  - **Arsenic**: Maximum Contaminant Level (MCL) 0.01 mg/L
+
+---
+
+## 🚀 Installation & Usage
+
+### Prerequisites
+- Python 3.9+
+- Jupyter Notebook
+- PyTorch, Scikit-Learn, Pandas, LangChain-Core
+
+### Setup
+```bash
+git clone https://github.com/senthilv83/WaterQuality_IoT_AgenticAI.git
+cd WaterQuality_IoT_AgenticAI
+pip install -r requirements.txt
+```
+
+### Execution
+Run the integrated Jupyter Notebook to view the entire pipeline, from data generation to Agentic reporting:
+```bash
+jupyter notebook WaterQuality_EdgeAI_Framework.ipynb
+```
+
+### Sample Agentic AI Output
+```text
+=======================================================================
+### [AGENTIC ADVISOR] INTEGRATED EPA REPORT ###
+**Timestamp**: 2026-04-08 12:48:20
+
+**1. COMPLIANCE IDENTIFICATION & EXPLANATION**
+- Legal Framework: 40 CFR §141.62 (National Primary Drinking Water Regulations)
+- EPA Compliance Status: NON-COMPLIANT (ACTIVE VIOLATION)
+- Compliance Explanation: Arsenic levels (0.0107 mg/L) have breached the 0.01 mg/L EPA Maximum Contaminant Level (MCL). This is an actionable violation requiring immediate remediation.
+
+**2. ML TELEMETRY (LAYERS 1-3)**
+- [Layer 1: LSTM] 30-Min Forecast -> pH: 6.98, DO: 6.60, TDS: 530.76
+- [Layer 2: RF] Current Readings  -> pH: 6.92, TDS: 528.7, Arsenic: 0.0107 (Conf: 100.0%)
+- [Layer 3: KMeans] Metal Species -> Arsenite (As III) (ORP: 126.8mV, Temp: 19.7C)
+
+**3. HUMAN-READABLE OPERATOR INSTRUCTIONS**
+1. HALT standard effluent discharge immediately.
+2. INITIATE iron salt co-precipitation sequence (Targeted specifically for Arsenite treatment).
+3. INCREASE mechanical aeration to assist oxidation of As(III) to As(V).
+4. LOG the violation and DRAFT a NetDMR exception report for the EPA.
+=======================================================================
+```
+
+---
+
+## 📚 IEEE Citation
+
+If you utilize this framework or architecture in your research, please cite the original foundational paper:
+
+> **S. Vijayakumar, S. P. Kane, S. Senthilkumar, S. E, S. Selvaraj, K. Vaiappuri, and V. Veeramalai**, "A Multi-Modal Edge-AI Framework for Real-Time Industrial Water Quality Monitoring and Automated EPA Compliance Using IoT and Regulatory LLMs," *Unpublished/Pending*.
+
+**Related References incorporated into the framework:**
+*   Breiman, L. (2001). "Random Forests." *Machine Learning*, 45(1), 5-32.
+*   Hochreiter, S., & Schmidhuber, J. (1997). "Long Short-Term Memory." *Neural Computation*, 9(8), 1735-1780.
+*   Smedley, P. L., & Kinniburgh, D. G. (2002). "A review of the source, behaviour and distribution of arsenic in natural waters." *Applied Geochemistry*, 17(5), 517-568.
+
+---
+
+## 👨‍💻 Author & Contact
+**Senthilkumar Vijayakumar** (IEEE Senior Member)  
+Email: [senthilkumar.vb@gmail.com](mailto:senthilkumar.vb@gmail.com)  
+GitHub: [senthilv83](https://github.com/senthilv83)
