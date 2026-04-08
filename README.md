@@ -112,16 +112,7 @@ jupyter notebook WaterQuality_EdgeAI_Framework.ipynb
 
 If you utilize this framework or architecture in your research, please cite the original foundational paper:
 
-> **S. Vijayakumar, S. P. Kane, S. Senthilkumar, S. E, S. Selvaraj, K. Vaiappuri, and V. Veeramalai**, "A Multi-Modal Edge-AI Framework for Real-Time Industrial Water Quality Monitoring and Automated EPA Compliance Using IoT and Regulatory LLMs," *Unpublished/Pending*.
+> **S. Vijayakumar, S. P. Kane, Filious Louis, S. E, S. Selvaraj, K. Vaiappuri, and V. Veeramalai**, "A Multi-Modal Edge-AI Framework for Real-Time Industrial Water Quality Monitoring and Automated EPA Compliance Using IoT and Regulatory LLMs," *Unpublished/Pending*.
 
-**Related References incorporated into the framework:**
-*   Breiman, L. (2001). "Random Forests." *Machine Learning*, 45(1), 5-32.
-*   Hochreiter, S., & Schmidhuber, J. (1997). "Long Short-Term Memory." *Neural Computation*, 9(8), 1735-1780.
-*   Smedley, P. L., & Kinniburgh, D. G. (2002). "A review of the source, behaviour and distribution of arsenic in natural waters." *Applied Geochemistry*, 17(5), 517-568.
 
 ---
-
-## 👨‍💻 Author & Contact
-**Senthilkumar Vijayakumar** (IEEE Senior Member)  
-Email: [senthilkumar.vb@gmail.com](mailto:senthilkumar.vb@gmail.com)  
-GitHub: [senthilv83](https://github.com/senthilv83)
