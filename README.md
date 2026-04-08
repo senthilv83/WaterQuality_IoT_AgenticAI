@@ -112,7 +112,7 @@ jupyter notebook WaterQuality_EdgeAI_Framework.ipynb
 
 If you utilize this framework or architecture in your research, please cite the original foundational paper:
 
-> **S. Vijayakumar, S. P. Kane, Filious Louis, S. E, S. Selvaraj, K. Vaiappuri, and V. Veeramalai**, "A Multi-Modal Edge-AI Framework for Real-Time Industrial Water Quality Monitoring and Automated EPA Compliance Using IoT and Regulatory LLMs," *Unpublished/Pending*.
+> **Senthilkumar Vijayakumar, Shaunak Pai Kane, Filious Louis, Sidharth E, Surendran Selvaraj, Kuna Vaiappuri, Vadiveloo Veeramalai**, "A Multi-Modal Edge-AI Framework for Real-Time Industrial Water Quality Monitoring and Automated EPA Compliance Using IoT and Regulatory LLMs," *Unpublished/Pending*.
 
 
 ---
